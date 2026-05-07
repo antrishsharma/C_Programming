@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int reve(int n,int rev){
+    if(n==0) return rev;
+    else return reve((n/10),rev*10+(n%10));
+}
+int main() { int n;
+            scanf("%d",&n);
+            printf("%d",reve(n,0));
+            
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
