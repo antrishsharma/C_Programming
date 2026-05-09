@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int N;
+    char names[100][51], temp[51];
+
+    // Read number of students
+    scanf("%d", &N);
+
+    // Read student names
+    for (int i = 0; i < N; i++) {
+        scanf("%s", names[i]);
+    }
+
+    // Sort names in ascending order
+    for (int i = 0; i < N - 1; i++) {
+        for (int j = i + 1; j < N; j++) {
+            if (strcmp(names[i], names[j]) > 0) {
+                strcpy(temp, names[i]);
+                strcpy(names[i], names[j]);
+                strcpy(names[j], temp);
+            }
+        }
+    }
+
+    // Print sorted names
+    for (int i = 0; i < N; i++) {
+        printf("%s\n", names[i]);
+    }
+
+    return 0;
+}
